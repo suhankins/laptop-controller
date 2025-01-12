@@ -1,0 +1,12 @@
+@laptop_controller.Server_HostAddress = http://localhost:5182
+
+GET {{laptop_controller.Server_HostAddress}}/screenbrightness/
+Accept: application/json
+
+###
+
+POST {{laptop_controller.Server_HostAddress}}/screenbrightness/
+Accept: application/json
+
+###
+

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "laptop-controller.Server", "laptop-controller.Server\laptop-controller.Server.csproj", "{023EB8FA-1DA0-4B87-A978-EB3B190B7BF1}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "laptop-controller.client", "laptop-controller.client\laptop-controller.client.esproj", "{01D697FE-280C-4436-AAB9-549F5CDBFC57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{023EB8FA-1DA0-4B87-A978-EB3B190B7BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{023EB8FA-1DA0-4B87-A978-EB3B190B7BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{023EB8FA-1DA0-4B87-A978-EB3B190B7BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{023EB8FA-1DA0-4B87-A978-EB3B190B7BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D697FE-280C-4436-AAB9-549F5CDBFC57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D697FE-280C-4436-AAB9-549F5CDBFC57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D697FE-280C-4436-AAB9-549F5CDBFC57}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{01D697FE-280C-4436-AAB9-549F5CDBFC57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D697FE-280C-4436-AAB9-549F5CDBFC57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D697FE-280C-4436-AAB9-549F5CDBFC57}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
