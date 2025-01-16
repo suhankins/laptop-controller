@@ -59,6 +59,7 @@ export default function Slider({
         <label className={styles.container}>
             {children}
             <div className={styles.sliderContainer}>
+                <span className={styles.valueDisplay}>{value}%</span>
                 <input
                     className={styles.slider}
                     disabled={loading}
