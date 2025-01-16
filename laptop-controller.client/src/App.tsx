@@ -1,6 +1,6 @@
 import './App.css';
 import Selector from './components/Selector';
-import Slider from './components/Slider';
+import Slider from './components/Slider/Slider';
 
 function App() {
     return (
@@ -10,6 +10,7 @@ function App() {
             <Slider action="screenbrightness" name="brightness">
                 Screen Brightness
             </Slider>
+            <br />
             <Slider action="volume" name="volume">
                 Volume
             </Slider>

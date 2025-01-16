@@ -1,0 +1,90 @@
+.container {
+    color: var(--red);
+    text-shadow: var(--red) 0 0 5px;
+}
+
+.container:has(.slider:focus) {
+    color: var(--cyan);
+    text-shadow: var(--cyan) 0 0 5px;
+}
+
+.sliderContainer {
+    background-color: var(--red-transparent);
+    border-color: var(--red);
+    border-width: 1.5px;
+    border-style: solid;
+    height: 2em;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.8em + 1.5px), calc(100% - 0.8em + 1.5px) 100%, 0 100%);
+    margin-top: 0.5em;
+}
+
+.sliderContainer::before {
+    content: '';
+    height: 0.8em;
+    width: 0.8em;
+    background-color: var(--red);
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    clip-path: polygon(100% 100%, 100% 0, 0 100%);
+}
+
+.sliderContainer:has(.slider:focus) {
+    background-color: var(--cyan-transparent);
+    border-color: var(--cyan);
+}
+
+.sliderContainer:has(.slider:focus)::before {
+    background-color: var(--cyan);
+}
+
+.slider {
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: calc(100% - 6ch);
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 6ch;
+    position: relative;
+}
+
+.slider::before {
+    content: attr(value) '%';
+    position: absolute;
+    right: calc(100% + 0.5ch);
+    color: var(--cyan);
+    text-shadow: var(--cyan) 0 0 5px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.slider:focus {
+    outline: none;
+}
+
+.slider::-webkit-slider-runnable-track {
+    background-color: var(--red-transparent);
+    height: 0.1em;
+}
+
+.slider:focus::-webkit-slider-runnable-track {
+    background-color: var(--cyan-transparent);
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: -0.95em; /* Centers thumb on the track */
+    background-image: url('/thumb.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 2em;
+    width: 3em;
+}
+
+.slider:focus::-webkit-slider-thumb {
+    background-image: url('/thumb-focused.svg');
+}

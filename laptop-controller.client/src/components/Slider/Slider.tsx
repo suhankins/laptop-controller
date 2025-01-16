@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import debounce from 'lodash/debounce';
+import styles from './Slider.module.css';
 
 type SliderProps =
     | {
@@ -20,12 +21,13 @@ export default function Slider({
     children,
     ...props
 }: SliderProps) {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false); // useState(true);
     const [value, setValue] = useState(0);
 
     const sendValue = useMemo(
         () =>
             debounce((value) => {
+                return;
                 const url =
                     action + '?' + new URLSearchParams({ [name]: value });
                 setLoading(true);
@@ -34,11 +36,12 @@ export default function Slider({
                 }).then(() => {
                     setLoading(false);
                 });
-            }, 200),
+            }, 500),
         [action, name]
     );
 
     useEffect(() => {
+        return;
         fetch(action)
             .then((response) => {
                 if (!response.ok) {
@@ -53,22 +56,25 @@ export default function Slider({
     }, [action]);
 
     return (
-        <label>
+        <label className={styles.container}>
             {children}
-            <input
-                disabled={loading}
-                type="range"
-                min={min}
-                max={max}
-                step={step}
-                value={value}
-                onChange={(event) => {
-                    const parsedValue = Number.parseInt(event.target.value)
-                    setValue(parsedValue)
-                    sendValue(parsedValue)
-                }}
-                {...props}
-            />
+            <div className={styles.sliderContainer}>
+                <input
+                    className={styles.slider}
+                    disabled={loading}
+                    type="range"
+                    min={min}
+                    max={max}
+                    step={step}
+                    value={value}
+                    onChange={(event) => {
+                        const parsedValue = Number.parseInt(event.target.value);
+                        setValue(parsedValue);
+                        sendValue(parsedValue);
+                    }}
+                    {...props}
+                />
+            </div>
         </label>
     );
 }
