@@ -13,9 +13,11 @@
     --cyan: #54eaf3;
     --cyan-transparent: #54eaf322;
     --cyan-less-transparent: #54eaf344;
+    --cyan-glow: var(--cyan) 0 0 5px;
     --red: #c5003c;
     --red-transparent: #c5003c22;
     --red-less-transparent: #c5003c44;
+    --red-glow: var(--red) 0 0 5px;
 }
 
 *,
@@ -47,26 +49,7 @@ h1 {
     line-height: 1.1;
 }
 
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-}
-button:hover {
-    border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
-
-input {
+input, button {
     font-family: inherit;
     font-size: inherit;
 }

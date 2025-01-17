@@ -1,11 +1,11 @@
 .container {
     color: var(--red);
-    text-shadow: var(--red) 0 0 5px;
+    text-shadow: var(--red-glow);
 }
 
 .container:has(.slider:focus) {
     color: var(--cyan);
-    text-shadow: var(--cyan) 0 0 5px;
+    text-shadow: var(--cyan-glow);
 }
 
 .sliderContainer {
@@ -38,7 +38,7 @@
     justify-content: end;
     padding-right: 0.5ch;
     color: var(--cyan);
-    text-shadow: var(--cyan) 0 0 5px;
+    text-shadow: var(--cyan-glow);
 }
 
 .sliderContainer:has(.slider:focus) {

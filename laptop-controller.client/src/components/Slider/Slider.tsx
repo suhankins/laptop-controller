@@ -27,7 +27,6 @@ export default function Slider({
     const sendValue = useMemo(
         () =>
             debounce((value) => {
-                return;
                 const url =
                     action + '?' + new URLSearchParams({ [name]: value });
                 setLoading(true);
@@ -41,7 +40,6 @@ export default function Slider({
     );
 
     useEffect(() => {
-        return;
         fetch(action)
             .then((response) => {
                 if (!response.ok) {
@@ -56,8 +54,8 @@ export default function Slider({
     }, [action]);
 
     return (
-        <label className={styles.container}>
-            {children}
+        <label className={styles.container} aria-labelledby={`slider_${action}`}>
+            <p id={`slider_${action}`}>{children}</p>
             <div className={styles.sliderContainer}>
                 <span className={styles.valueDisplay}>{value}%</span>
                 <input
