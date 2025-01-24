@@ -26,11 +26,6 @@ namespace laptop_controller.Server
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.MapFallbackToFile("/index.html");

@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>laptop_controller.Server</RootNamespace>
     <SpaRoot>..\laptop-controller.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
-    <SpaProxyServerUrl>https://localhost:56057</SpaProxyServerUrl>
+    <SpaProxyServerUrl>http://localhost:56057</SpaProxyServerUrl>
   </PropertyGroup>
 
   <ItemGroup>
