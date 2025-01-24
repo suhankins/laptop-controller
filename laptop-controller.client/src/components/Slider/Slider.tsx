@@ -21,7 +21,7 @@ export default function Slider({
     children,
     ...props
 }: SliderProps) {
-    const [loading, setLoading] = useState(false); // useState(true);
+    const [loading, setLoading] = useState(true);
     const [value, setValue] = useState(0);
 
     const sendValue = useMemo(
@@ -29,11 +29,8 @@ export default function Slider({
             debounce((value) => {
                 const url =
                     action + '?' + new URLSearchParams({ [name]: value });
-                setLoading(true);
                 fetch(url, {
                     method: 'POST',
-                }).then(() => {
-                    setLoading(false);
                 });
             }, 500),
         [action, name]
@@ -54,7 +51,9 @@ export default function Slider({
     }, [action]);
 
     return (
-        <label className={styles.container} aria-labelledby={`slider_${action}`}>
+        <label
+            className={styles.container}
+            aria-labelledby={`slider_${action}`}>
             <p id={`slider_${action}`}>{children}</p>
             <div className={styles.sliderContainer}>
                 <span className={styles.valueDisplay}>{value}%</span>
