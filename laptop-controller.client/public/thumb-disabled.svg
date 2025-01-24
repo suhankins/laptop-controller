@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="3mm" height="2mm" version="1.1"
+    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+    viewBox="0 0 4.54 3.02" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <style type="text/css">
+            <![CDATA[
+            .fil0 {
+                fill: #65656544
+            }
+
+            .fil1 {
+                fill: #656565
+            }
+            ]]>
+        </style>
+    </defs>
+    <polygon class="fil0" points="4.54,1.82 4.54,0 -0,0 -0,3.02 3.33,3.02 " />
+    <path class="fil1"
+        d="M4.38 1.76l0 -1.61 -4.23 0 0 2.72 3.12 0 1.12 -1.12zm0.15 0.06l0 -1.82 -4.54 0 0 3.02 3.33 0 1.2 -1.2z" />
+</svg>

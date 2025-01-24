@@ -1,16 +1,36 @@
 .container {
-    color: var(--red);
-    text-shadow: var(--red-glow);
+    --primary: var(--red);
+    --glow: var(--red-glow);
+    --transparent: var(--red-transparent);
+    --less-transparent: var(--red-less-transparent);
+    --secondary: var(--cyan);
+    --secondary-glow: var(--cyan-glow);
+    --thumb: url('/thumb.svg');
+    color: var(--primary);
+    text-shadow: var(--glow);
 }
 
-.container:has(.slider:focus) {
-    color: var(--cyan);
-    text-shadow: var(--cyan-glow);
+.container:has(.slider:is(:hover, :focus)) {
+    --primary: var(--cyan);
+    --glow: var(--cyan-glow);
+    --transparent: var(--cyan-transparent);
+    --less-transparent: var(--cyan-less-transparent);
+    --thumb: url('/thumb-focused.svg');
+}
+
+.container:has(.slider:disabled) {
+    --primary: var(--grey);
+    --glow: var(--grey-glow);
+    --transparent: var(--grey-transparent);
+    --less-transparent: var(--grey-less-transparent);
+    --secondary: var(--grey);
+    --secondary-glow: var(--grey-glow);
+    --thumb: url('/thumb-disabled.svg');
 }
 
 .sliderContainer {
-    background-color: var(--red-transparent);
-    border-color: var(--red);
+    background-color: var(--transparent);
+    border-color: var(--primary);
     border-width: 1.5px;
     border-style: solid;
     height: 2em;
@@ -24,7 +44,7 @@
     content: '';
     height: 0.8em;
     width: 0.8em;
-    background-color: var(--red);
+    background-color: var(--primary);
     position: absolute;
     right: -1px;
     bottom: -1px;
@@ -37,17 +57,8 @@
     display: flex;
     justify-content: end;
     padding-right: 0.5ch;
-    color: var(--cyan);
-    text-shadow: var(--cyan-glow);
-}
-
-.sliderContainer:has(.slider:focus) {
-    background-color: var(--cyan-transparent);
-    border-color: var(--cyan);
-}
-
-.sliderContainer:has(.slider:focus)::before {
-    background-color: var(--cyan);
+    color: var(--secondary);
+    text-shadow: var(--secondary-glow);
 }
 
 .slider {
@@ -70,27 +81,19 @@ Chrome
 */
 
 .slider::-webkit-slider-runnable-track {
-    background-color: var(--red-transparent);
+    background-color: var(--transparent);
     height: 0.1em;
-}
-
-.slider:focus::-webkit-slider-runnable-track {
-    background-color: var(--cyan-transparent);
 }
 
 .slider::-webkit-slider-thumb {
     appearance: none;
     margin-top: -0.95em; /* Centers thumb on the track */
     background: none;
-    background-image: url('/thumb.svg');
+    background-image: var(--thumb);
     background-repeat: no-repeat;
     background-size: cover;
     height: 2em;
     width: 3em;
-}
-
-.slider:focus::-webkit-slider-thumb {
-    background-image: url('/thumb-focused.svg');
 }
 
 /*
@@ -101,12 +104,8 @@ because then it won't work in Chrome
 */
 
 .slider::-moz-range-track {
-    background-color: var(--red-transparent);
+    background-color: var(--transparent);
     height: 0.1em;
-}
-
-.slider:focus::-moz-range-track {
-    background-color: var(--cyan-transparent);
 }
 
 .slider::-moz-range-thumb {
@@ -115,13 +114,9 @@ because then it won't work in Chrome
     background-color: #00000000;
     border-radius: 0;
     margin-top: -0.95em; /* Centers thumb on the track */
-    background-image: url('/thumb.svg');
+    background-image: var(--thumb);
     background-repeat: no-repeat;
     background-size: cover;
     height: 2em;
     width: 3em;
-}
-
-.slider:focus::-moz-range-thumb {
-    background-image: url('/thumb-focused.svg');
 }

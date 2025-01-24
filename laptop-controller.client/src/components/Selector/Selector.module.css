@@ -22,7 +22,7 @@
     --current-color: var(--red);
 }
 
-.innerGroup > button:hover {
+.innerGroup > button:is(:hover, :focus) {
     background-color: var(--cyan-transparent);
     border-color: var(--cyan);
     --current-color: var(--cyan);
