@@ -1,4 +1,5 @@
 using AudioSwitcher.AudioApi.CoreAudio;
+using AudioSwitcher.AudioApi;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.Versioning;
 
@@ -10,6 +11,7 @@ namespace laptop_controller.Server.Controllers
     [Route("[controller]")]
     public class VolumeController : ControllerBase
     {
+        private static readonly CoreAudioController coreAudioController = new CoreAudioController();
         private readonly ILogger<VolumeController> _logger;
 
         public VolumeController(ILogger<VolumeController> logger)
@@ -20,16 +22,14 @@ namespace laptop_controller.Server.Controllers
         [HttpGet(Name = "GetVolume")]
         public IActionResult Get()
         {
-            CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
-            return Ok(defaultPlaybackDevice.Volume);
+            return Ok(coreAudioController.GetDefaultDevice(DeviceType.Playback, Role.Multimedia).Volume);
         }
 
 
         [HttpPost(Name = "SetVolume")]
-        public IActionResult Set(byte volume)
+        async public Task<IActionResult> Set(byte volume)
         {
-            CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
-            defaultPlaybackDevice.Volume = volume;
+            await coreAudioController.GetDefaultDevice(DeviceType.Playback, Role.Multimedia).SetVolumeAsync(volume);
             return Ok();
         }
     }
